@@ -1,7 +1,7 @@
 import React from 'react'
 import Movie from './UI/Movie'
 
-function Search() {
+function Search({MovieData}) {
   return (
     <section className='search'>
        <div className="container">
