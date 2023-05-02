@@ -1,11 +1,17 @@
 import './App.css';
-import SearchLanding from './Components/SearchLanding';
+import Movies from './Pages/Movies';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-  
-    <SearchLanding/>
+       <Router>
+        <Routes>
+          <Route path='/' element={<Movies/>}/>
+        </Routes>
+
+       </Router>
+    
     </div>
   );
 }
