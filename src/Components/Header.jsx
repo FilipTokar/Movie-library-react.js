@@ -1,7 +1,7 @@
 import SearchIcon from "@mui/icons-material/Search";
 import { Button } from "@mui/material";
 
-function Header({ onSearch, onInputChange }) {
+function Header({ onSearch, onInputChange,}) {
 
   return (
     <>
