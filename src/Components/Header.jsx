@@ -1,18 +1,7 @@
-import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button } from "@mui/material";
 
-function Header({ onSearch }) {
-  const [userInput, setUserInput] = useState("");
-
-  function changeInput(event) {
-    setUserInput(event.target.value);
-  }
-
-  function sendInput() {
-    onSearch(userInput);
-    console.log(userInput);
-  }
+function Header({ onSearch, onInputChange }) {
 
   return (
     <>
@@ -22,11 +11,10 @@ function Header({ onSearch }) {
           <input
             type="text"
             placeholder="Type a movie related keyword "
-            value={userInput}
-            onChange={changeInput}
-            onKeyUp={(event) => event.key === "Enter" && sendInput()}
+            onChange={onInputChange}
+            onKeyUp={(event) => event.key === "Enter" && onSearch()}
           />
-          <Button disableRipple className="search__button" onClick={sendInput}>
+          <Button disableRipple className="search__button" onClick={onSearch}>
             <SearchIcon className="search__icon" />
           </Button>
         </div>
