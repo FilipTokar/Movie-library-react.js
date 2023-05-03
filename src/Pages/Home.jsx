@@ -1,10 +1,12 @@
 import React from 'react'
 import Nav from '../Components/Nav'
+import HomeHeader from '../Components/HomeHeader'
 
 function Home() {
   return (
-    <div>
+    <div className='home'>
       <Nav blue/>
+      <HomeHeader/>
     </div>
   )
 }
