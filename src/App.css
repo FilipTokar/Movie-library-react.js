@@ -98,6 +98,10 @@ h1 {
   color: white;
 }
 
+.no-click {
+  cursor: not-allowed;
+}
+
 /* NAVBAR (blue-version) */
 
 .nav__container--blue .logo {
