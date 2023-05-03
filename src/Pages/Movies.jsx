@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from '../Components/Nav'
 import Header from '../Components/Header'
 import axios from "axios";
-
 import Search from "../Components/Search";
+import { useParams } from "react-router-dom";
 
 function Movies() {
+  const {movie} = useParams()
   const [movieData, setMovieData] = useState([])
-  const [userInput, setUserInput] = useState("");
+  const [userInput, setUserInput] = useState(movie);
   const [loading, setLoading] = useState()
+
+  useEffect(() => {
+    getMovies(userInput)
+  }, [])
+
 
   async function getMovies(searchQuery) {
     setLoading(true)
     const {data: {Search}} = await axios.get(`https://www.omdbapi.com/?apikey=56cb40ec&s=${searchQuery}`)
     setMovieData(Search)
     setLoading(false)
-    console.log(Search)
   }
 
-  // this function is loging value on each letter from onchange event listener in Header. FIX IT!
+
   function handleInputChange(event) {
       event.preventDefault()
       setUserInput(event.target.value);
@@ -26,7 +31,6 @@ function Movies() {
 
   function handleSearch() {
     getMovies(userInput)
-    console.log(userInput)
   }
 
   
