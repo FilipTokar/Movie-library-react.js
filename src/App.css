@@ -98,6 +98,30 @@ h1 {
   color: white;
 }
 
+/* NAVBAR (blue-version) */
+
+.nav__container--blue .logo {
+  filter: invert(0);
+}
+
+.nav__container--blue 
+.link__hover-effect {
+  color: rgb(25, 55, 109);
+}
+
+.nav__container--blue .link__hover-effect:after {
+  background-color: rgb(25, 55, 109);
+}
+
+.nav__container--blue .nav__link--btn {
+  color: white;
+  background-color: rgb(25, 55, 109);
+}
+
+.nav__container--blue .nav__link--btn:hover {
+  background-color: rgb(98, 205, 255);
+}
+
 /* Header */
 
 .header__container {

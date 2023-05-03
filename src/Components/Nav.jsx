@@ -1,10 +1,10 @@
 import React from "react";
 import LibraryLogo from "../assets/favpng_movie-logo.png"
 
-function Nav() {
+function Nav({blue}) {
   return (
     <nav>
-      <div className="nav__container">
+      <div className={`nav__container ${blue && " nav__container--blue"}`}>
         <figure>
           <img className="logo" src={LibraryLogo} alt="" />
         </figure>
