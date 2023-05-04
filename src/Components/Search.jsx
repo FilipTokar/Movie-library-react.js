@@ -4,6 +4,7 @@ import { Skeleton } from "@mui/material";
 import CustomSkeleton from "./UI/CustomSkeleton";
 
 function Search({ movieData, userInput, loading }) {
+
   return (
     <section className="search">
       <div className="container">
@@ -34,8 +35,12 @@ function Search({ movieData, userInput, loading }) {
                       img={movie.Poster}
                       title={movie.Title}
                       year={movie.Year}
+                      // this doesnt pass in the movieID to to link in movies component but the useParams works in Movie info
+                      movieID={movie.imbdID}
                     />
-                  ))}
+                  
+                  ))
+              }
           </div>
         </div>
       </div>

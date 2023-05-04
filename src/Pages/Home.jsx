@@ -14,7 +14,7 @@ function Home() {
   }
 
   function changePages() {
-    navigate(`/${url}`);
+    navigate(`/movies/${url}`);
   }
 
   return (
