@@ -32,11 +32,7 @@ function Search({ movieData, userInput, loading }) {
                   .map((movie) => (
                     <Movie
                       key={movie.imbdID}
-                      img={movie.Poster}
-                      title={movie.Title}
-                      year={movie.Year}
-                      // this doesnt pass in the movieID to to link in movies component but the useParams works in Movie info
-                      movieID={movie.imbdID}
+                      movie={movie}
                     />
                   
                   ))
