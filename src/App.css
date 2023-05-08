@@ -405,3 +405,9 @@ h1 {
 .movie-info__summary--data {
   margin: 14px 0 28px 0;
 }
+
+.no-result__img {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+}

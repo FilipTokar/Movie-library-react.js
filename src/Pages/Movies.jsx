@@ -3,10 +3,12 @@ import Nav from "../Components/Nav";
 import Header from "../Components/Header";
 import axios from "axios";
 import Search from "../Components/Search";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import NoResults from "../Components/NoResults";
 
 function Movies() {
   const { movie } = useParams();
+  const navigate = useNavigate()
   const [movieData, setMovieData] = useState([]);
   const [userInput, setUserInput] = useState(movie);
   const [loading, setLoading] = useState();
@@ -25,6 +27,7 @@ function Movies() {
     );
     setMovieData(Search);
     setLoading(false);
+    navigate(`/movies/${searchQuery}`)
   }
 
   function handleInputChange(event) {
@@ -42,7 +45,10 @@ function Movies() {
         <Nav />
         <Header onSearch={handleSearch} onInputChange={handleInputChange} />
       </div>
-      <Search movieData={movieData} userInput={userInput} loading={loading} />
+      {
+        movieData.length === 0 ? (<NoResults/>) : (<Search movieData={movieData} userInput={userInput} loading={loading} />)
+      }
+      
     </div>
   );
 }

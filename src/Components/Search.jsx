@@ -16,7 +16,8 @@ function Search({ movieData, userInput, loading }) {
             </h1>
           </div>
           <div className="movies-list">
-            {loading
+            {
+            loading
               ? new Array(6)
                   .fill(0)
                   .map((_, index) => (
@@ -34,7 +35,6 @@ function Search({ movieData, userInput, loading }) {
                       key={movie.imbdID}
                       movie={movie}
                     />
-                  
                   ))
               }
           </div>

@@ -28,7 +28,7 @@ function MovieInfo() {
   }, []);
 
   function goBack () {
-    navigate.length > 1 ? navigate(-1) : navigate('/movies')
+    navigate.length >= 1 ? navigate(-1) : navigate('/movies')
   }
 
   return (
