@@ -1,34 +1,34 @@
-import React from "react";
+import React from 'react'
 
-function MovieCard({movieInfoData}) {
+function MovieCardSkeleton({img, title, released, runtime, actors, plot}) {
   return (
     <div className="movie-card">
       <figure className="movie-img__container">
         <img
-          src={movieInfoData?.Poster}
+          src={img}
           alt=""
         />
       </figure>
       <div className="movie-info__description">
-        <h2 className="movie-info__title">{movieInfoData?.Title}</h2>
+        <h2 className="movie-info__title">{title}</h2>
         <p className="movie-info__rating"></p>
         <div className="movie-info__plot">
           <h3 className="movie-info__summary--title">Summary</h3>
           <div className="movie-info__summary--data">
-            <p className="movie-info__summary--para">Released: {movieInfoData?.Released}</p>
-            <p className="movie-info__summary--para">Runtime: {movieInfoData?.Runtime}</p>
+            <p className="movie-info__summary--para">Released: {released}</p>
+            <p className="movie-info__summary--para">Runtime: {runtime}</p>
             <p className="movie-info__summary--para">
-              Actors: {movieInfoData?.Actors}{" "}
+              Actors: {actors}{" "}
             </p>
           </div>
 
           <p className="movie-info__summary--para">
-            Plot: {movieInfoData?.Plot}
+            Plot: {plot}
           </p>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default MovieCard;
+export default MovieCardSkeleton
