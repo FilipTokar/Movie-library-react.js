@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Nav from "../Components/Nav";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import MovieCard from "../Components/UI/MovieCard";
 import axios from "axios";
 import MovieCardSkeleton from "../Components/UI/MovieCardSkeleton";
-import { Skeleton } from "@mui/material";
+import { Button, Skeleton } from "@mui/material";
 
 function MovieInfo() {
   const [movieInfoData, setMovieInfoData] = useState();
   const [loading, setLoading] = useState();
   const { movieID } = useParams();
+  const navigate = useNavigate()
 
   async function getMovieInfo(movieCode) {
     setLoading(true);
@@ -26,21 +27,26 @@ function MovieInfo() {
     getMovieInfo(movieID);
   }, []);
 
+  function goBack () {
+    navigate.length > 1 ? navigate(-1) : navigate('/movies')
+  }
+
   return (
     <div>
       <Nav blue />
       <div className="container">
         <div className="row">
           <div className="movie-card__top">
-            <Link to="/movies">
+            <Button onClick={goBack} className="movie-card__button--back">
               <ArrowBackIcon />
-            </Link>
-            <Link to="/movies">Browse</Link>
+            Browse
+            </Button>
           </div>
           {loading ? (
             <MovieCardSkeleton
               img={<Skeleton variant="rounded" width={300} height={400} />}
               title={<Skeleton variant="text" />}
+              rating={<Skeleton variant="text" />}
               released={<Skeleton variant="text" />}
               runtime={<Skeleton variant="text" />}
               actors={<Skeleton variant="text" />}

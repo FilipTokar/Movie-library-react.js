@@ -11,7 +11,7 @@ function MovieCard({movieInfoData}) {
       </figure>
       <div className="movie-info__description">
         <h2 className="movie-info__title">{movieInfoData?.Title}</h2>
-        <p className="movie-info__rating"></p>
+        <p className="movie-info__rating">{movieInfoData?.Ratings[0].Value}</p>
         <div className="movie-info__plot">
           <h3 className="movie-info__summary--title">Summary</h3>
           <div className="movie-info__summary--data">

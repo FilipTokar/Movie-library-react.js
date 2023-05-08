@@ -349,10 +349,10 @@ h1 {
   padding-left: 12px;
 }
 
-.movie-card__top a {
-  margin-right: 12px;
-  color: rgb(25, 55, 109);
-  font-size: 28px;
+.movie-card__button--back {
+  color: rgb(25, 55, 109) !important;
+  font-size: 28px !important;
+  text-transform: capitalize !important;
 }
 
 .movie-card {
@@ -394,7 +394,7 @@ h1 {
 }
 
 .movie-info__plot {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .movie-info__summary--title {
