@@ -11,7 +11,7 @@ function NoResults() {
             <h1 className="search__title">
               Could not find any matches.
             </h1>
-            <h2>Please set a input keyword</h2>
+            <h2>Please wait or set a input keyword.</h2>
           </div>
         </div>
         </div>

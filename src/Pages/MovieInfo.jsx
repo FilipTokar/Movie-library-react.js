@@ -44,13 +44,12 @@ function MovieInfo() {
           </div>
           {loading ? (
             <MovieCardSkeleton
-              img={<Skeleton variant="rounded" width={300} height={400} />}
-              title={<Skeleton variant="text" />}
-              rating={<Skeleton variant="text" />}
-              released={<Skeleton variant="text" />}
-              runtime={<Skeleton variant="text" />}
-              actors={<Skeleton variant="text" />}
-              plot={<Skeleton variant="text" />}
+              title={<Skeleton variant="rectangular" width="100%" />}
+              rating={<Skeleton variant="rectangular" width="100%" />}
+              released={<Skeleton variant="rectangular" width="100%" />}
+              runtime={<Skeleton variant="rectangular" width="100%" />}
+              actors={<Skeleton variant="rectangular" width="100%" />}
+              plot={<Skeleton variant="rectangular" width="100%" />}
             />
           ) : (
             <MovieCard movieInfoData={movieInfoData} />

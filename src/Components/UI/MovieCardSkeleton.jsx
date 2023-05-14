@@ -1,17 +1,15 @@
+import { Skeleton } from '@mui/material'
 import React from 'react'
 
-function MovieCardSkeleton({img, title, rating, released, runtime, actors, plot}) {
+function MovieCardSkeleton({title, rating, released, runtime, actors, plot}) {
   return (
     <div className="movie-card">
       <figure className="movie-img__container">
-        <img
-          src={img}
-          alt=""
-        />
+        <Skeleton variant="rectangular" width="100%" height={400}/>
       </figure>
       <div className="movie-info__description">
-        <h2 className="movie-info__title">{title}</h2>
-        <p className="movie-info__rating">{rating}</p>
+        <h2 className="movie-info__title">Title{title}</h2>
+        <p className="movie-info__rating">Rating{rating}</p>
         <div className="movie-info__plot">
           <h3 className="movie-info__summary--title">Summary</h3>
           <div className="movie-info__summary--data">
